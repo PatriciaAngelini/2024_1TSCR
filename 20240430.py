@@ -85,3 +85,108 @@ if num2 > num3:
   num2, num3 = num3, num2
 print(f'menor:{num1}, intermediario:{num2}, maior:{num3}')
 
+#Felipe Nakamura
+# Função para ordenar e imprimir os números
+# def ordenar_numeros(a, b, c):
+#     # Coloca os números em uma lista
+#     numeros = [a, b, c]
+
+#     # Ordena os números
+#     numeros.sort()
+
+#     # Imprime os números ordenados
+#     print("Menor:", numeros[0])
+#     print("Intermediário:", numeros[1])
+#     print("Maior:", numeros[2])
+
+# # Solicita ao usuário que entre com os números
+# num1 = float(input("Digite o primeiro número: "))
+# num2 = float(input("Digite o segundo número: "))
+# num3 = float(input("Digite o terceiro número: "))
+
+# # Chama a função para ordenar e imprimir os números
+# ordenar_numeros(num1, num2, num3)
+
+
+#Verificação de Palíndromo: Receba uma palavra do usuário e verifique se ela é um palíndromo (igual quando lida de trás para frente).
+#ana
+#abba
+#Giovanni 
+palavra=str(input("Digite uma palavra: ")).lower()
+print(palavra)
+palindromo=palavra[::-1]
+if palavra==palindromo:
+  print("Essa palavra é um palindromo")
+else:
+  print("Essa palavra nao é um palindromo")
+
+
+palavra = 'ana'
+invertida = ''
+# range(0, 4) -> 0, 1, 2, 3
+# range(4, 0, -1) -> 4, 3, 2, 1
+for i in range(len(palavra), 0, -1): 
+  print(i, palavra[i-1])
+  invertida = f'{invertida}{palavra[i-1]}' 
+print(invertida)  
+if palavra == invertida:
+  print(f"A palavra {palavra} é palindromo")
+
+# Temporizador: Crie um algoritmo que simule um temporizador. Peça os minutos e imprima um relógio de minutos e segundos. Utilize o FOR – um for dentro do outro. Repita o exerício usando o WHILE
+
+#Kaique
+from time import sleep
+
+minutos = int(input("Digite a quantidade de minutos: "))
+total_segundos = minutos * 60
+
+for s in range(total_segundos + 1):
+    minutos = s // 60
+    segundos = s % 60
+    print(f"  {minutos:02d}:{segundos:02d}", end="\r")
+    sleep(1)
+
+print("Tempo completado!")
+
+
+#while
+from time import sleep
+
+minutos = int(input("Digite a quantidade de minutos: "))
+total_segundos = minutos * 60
+segundos_passados = 0
+
+while segundos_passados <= total_segundos:
+    minutos = segundos_passados // 60
+    segundos = segundos_passados % 60
+    print(f"  {minutos:02d}:{segundos:02d}") #, end="\r")
+    segundos_passados += 1
+    #sleep(1)
+
+print("Tempo completado!")
+
+
+minutos = int(input("Digite a quantidade de minutos: "))
+#total_segundos = minutos * 60
+for m in range(minutos):
+  for s in range(60):
+    print(f'{m:02d}:{s:02d}')
+print(f'{minutos:02d}:{00:02d}')
+
+#Soma de Dígitos: Peça ao usuário um número inteiro e calcule a soma dos seus dígitos.
+numero = input("Digite um número inteiro: ")
+print(type(numero))
+soma = 0
+for digito in numero:
+    print(digito)
+    soma += int(digito)
+print(soma)
+
+
+numero = int(input("Digite um número inteiro: "))
+soma_digitos = 0
+while numero > 0:
+    ultimo_digito = numero % 10
+    soma_digitos += ultimo_digito
+    numero //= 10
+print("A soma dos dígitos é:", soma_digitos)
