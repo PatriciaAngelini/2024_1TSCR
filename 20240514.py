@@ -108,3 +108,30 @@ print(minhaTupla)
 
 print('\n\nApagando a Tupla')
 del minhaTupla
+
+
+# Com esse grande evento você está planejando agora o cardápio. Você deve inicialmente
+# montar uma lista de entradas para que sua irmã possa te ajudar. Monte uma lista com
+# usando o WHILE com todas as delicias gourmets. Não se esqueça de colocar o queijo
+# Roquefort.
+
+listaDelicias = []
+resp = 's'
+#resp = True
+while resp in ('s', 'sim', 'y'):
+  comida = input('Entre com a entrada a ser servida na reunião: ')
+  listaDelicias.append(comida)
+  resp = input('Quer cadastrar mais uma entrada? ').lower()
+
+if 'queijo roquefort' in listaDelicias:
+  print('O queijo roquefort esta na lista')
+else:
+  listaDelicias.append('queijo roquefort')
+print(listaDelicias)
+
+# ▪ Sua irmã não quer providenciar mais nada e para não chateá-la você transformou essa lista
+# em uma coleção imutável. Apresente a coleção
+
+tuplaDelicias = tuple(listaDelicias)
+del listaDelicias
+print(tuplaDelicias)
